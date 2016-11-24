@@ -4,6 +4,7 @@ var db = require('./models');
 /*REQUIRE NODE MODULES*/
 var express        = require( 'express' );
 var http           = require( 'http' );
+var auth           = require('basic-auth')
 var path           = require( 'path' );
 var engine         = require( 'ejs-locals' );
 var favicon        = require( 'serve-favicon' );
