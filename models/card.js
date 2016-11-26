@@ -8,5 +8,4 @@ var cardSchema = new Schema ({
   answer: String
 });
 
-var Card = mongoose.model('Card', cardSchema);
-module.exports = Card;
+module.exports = mongoose.model('Card', cardSchema);
