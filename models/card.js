@@ -3,11 +3,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var CardSchema = new Schema ({
+var cardSchema = new Schema ({
   question: String,
   answer: String
 });
 
-var Card = mongoose.model('Card', CardSchema);
-
-module.exports = Card
+var Card = mongoose.model('Card', cardSchema);
+module.exports = Card;
