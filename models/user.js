@@ -12,5 +12,5 @@ var userSchema = new Schema({
   decks: [Deck.schema]
 });
 
-var User = mongoose.model('User', userSchema);
-module.exports = User;
+/**EXPORTS USER MODEL SET-UP**/
+module.exports = mongoose.model('User', userSchema);
