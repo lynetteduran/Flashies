@@ -7,7 +7,7 @@ var express        = require('express'),
     User           = require('../models/user');
 
 /*DECLARES REQUIREMENTS AS ROUTER UTILITIES*/
-router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 router.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
@@ -36,7 +36,7 @@ router.route('/')
        res.format({
          html: function(){
            res.render('users/index', {
-             title: 'All Users',
+						 title: 'All Users',
              'users' : users
             });
          },
@@ -57,8 +57,6 @@ router.route('/')
       else {
         res.format({
           html: function(){
-
-                    debugger
             res.redirect('/users/show');
           },
           json: function(){
@@ -103,7 +101,8 @@ router.route('/:id')
     User.findById(req.id, function (err, user){
       if (err){
         console.log(err);
-      } else {
+      }
+      else {
         res.format({
           html: function(){
             res.render('users/show', {
@@ -116,6 +115,57 @@ router.route('/:id')
         });
       }
     });
+  })
+	.put(function(req, res){
+    User.findById({_id: req.params.id}, function (err, user){
+      user.userName = req.body.userName;
+      user.email 		= req.body.email;
+      user.password = req.body.password;
+
+			User.save(function(err, user){
+        if (err){
+          res.send("Oops, I guess you'll have to stay the same: " + err);
+        }
+        else {
+          res.format({
+            html: function(){
+              res.redirect("/users/" + user._id, {
+									"user" : user,
+							});
+            },
+            json: function(){
+              res.json(user);
+            }
+          });
+        }
+      });
+    });
   });
+
+router.route('/:id/edit')
+  .get(function(req, res){
+    User.findById({_id: req.params.id}, function(err, user){
+      if (err){
+        console.log(err);
+      }
+      else {
+        res.format({
+          html: function(){
+            res.render('users/edit', {
+              title      : "Don't ever change, ",
+              "user" : user,
+              // "userName" : userName,
+              // "email"    : email,
+              // "password" : password
+            });
+          },
+          json: function(){
+            res.json(user);
+          }
+        });
+      }
+    });
+	});
+
 
 module.exports = router;
