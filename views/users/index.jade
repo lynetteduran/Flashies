@@ -3,7 +3,8 @@ extends ../layout
 block content
   h1.
     #{title}
-  ul
+  ul#users-index
     - each user, i in users
-      li
-        = user.userName
+      a(href="users/#{user._id}")
+        li.user.get-user
+          = user.userName
