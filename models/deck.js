@@ -10,4 +10,5 @@ var deckSchema = new Schema({
   cards: [Card.schema],
 });
 
-module.exports = mongoose.model('Deck', deckSchema);
+var Deck = mongoose.model('Deck', deckSchema);
+module.exports = Deck;
