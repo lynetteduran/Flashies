@@ -26,7 +26,7 @@ router.use(function(req, res, next) {
 
 /*USER CRUD ACTIONS*/
 router.route('/')
-  /*GET ALL USERS#INDEX*/
+  /*GET USERS#INDEX*/
   .get(function(req, res, next){
     User.find({}, function (err, users){
       if (err){
@@ -42,12 +42,13 @@ router.route('/')
          },
          json: function(){
           res.json(users);
+          console.log(users);
          }
        });
       }
     });
   })
-  /*POST SINGLE USER*/
+  /*POST USER*/
   .post(function(req, res){
     User.create(req.body, function(err, user){
       if (err){
@@ -56,7 +57,9 @@ router.route('/')
       else {
         res.format({
           html: function(){
-            res.redirect('/users');
+
+                    debugger
+            res.redirect('/users/show');
           },
           json: function(){
             res.json(user);
@@ -68,7 +71,53 @@ router.route('/')
 
 /*GET NEW USER PAGE*/
 router.get('/new', function(req, res){
-    res.render('users/new', { title: 'Add New User' });
+  res.render('users/new', { title: 'Add New User' });
+});
+
+/*GET USER ID VALIDATION*/
+router.param('id', function(req, res, next, id) {
+  User.findById(id, function (err, user) {
+    if (err) {
+      console.error(err);
+      res.status(404);
+      var err = new Error('Not Found');
+      err.status = 404;
+      res.format({
+        html: function(){
+          next(err);
+         },
+        json: function(){
+          res.json({message : err.status  + ' ' + err});
+         }
+      });
+    } else {
+      req.id = id
+      next();
+    }
+  });
+});
+
+/*GET USER#SHOW*/
+router.route('/:id')
+  .get(function(req, res){
+    User.findById(req.id, function (err, user){
+      if (err){
+        console.log(err);
+      } else {
+        var userSince = User.userSince.toISOString();
+        userSince = userSince.substring(0, userSince.indexOf('T'))
+        res.format({
+          html: function(){
+            res.render('users/show', {
+              "user" : user
+            });
+          },
+          json: function(){
+            res.json(user);
+          }
+        });
+      }
+    });
   });
 
 module.exports = router;
