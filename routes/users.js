@@ -10,19 +10,19 @@ var express        = require('express'),
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 router.use(methodOverride(function(req, res){
-    if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-        var method = req.body._method;
-        delete req.body._method;
-        return method;
-    }
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    var method = req.body._method;
+    delete req.body._method;
+    return method;
+  }
 }));
 
 /*RETURNS MESSAGE ON CONSOLE WHEN SERVER RECEIVES USER CRUD REQUEST,
   PROCEEDS TO RESPECTIVE REQUEST*/
 router.use(function(req, res, next) {
-    console.log('Something is happening...');
-    next();
-  });
+  console.log('Something is happening...');
+  next();
+});
 
 /*USER CRUD ACTIONS*/
 router.route('/')
@@ -104,8 +104,6 @@ router.route('/:id')
       if (err){
         console.log(err);
       } else {
-        var userSince = User.userSince.toISOString();
-        userSince = userSince.substring(0, userSince.indexOf('T'))
         res.format({
           html: function(){
             res.render('users/show', {
