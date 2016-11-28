@@ -3,3 +3,6 @@ extends ../layout
 block content
   h1.
     Welcome, #{user.userName}
+  
+  form#getEditUser(name="editUserBtn", method="get", action="/users/#{user._id}/edit")
+    button#btnSubmit(type="submit") edit profile

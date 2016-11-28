@@ -5,6 +5,7 @@ block content
     #{title}
   ul#users-index
     - each user, i in users
-      a(href="users/#{user._id}")
-        li.user.get-user
-          = user.userName
+      .user.get-user
+        a(href="users/#{user._id}")
+          li
+            = user.userName

@@ -2,13 +2,16 @@ extends ../layout
 
 block content
 	h1.
-		#{title}
-	form#formAddUser(name="addUser", method="post", action="/users")
-		p user name: 
-			input#input-userName(type="text", placeholder="ex. John Smith", name="userName")
-		p email:
-			input#inputEmail(type="text", placeholder="ex. you@thebest.com", name="email")
-		p password: 
-			input#inputPassword(type="text", name="password")
-		p
-			button#btnSubmit(type="submit") submit
+		#{title} #{user.userName}
+	h2 But if you must...
+		
+	form#formEditUser(name="editUser", method="post", action="/users/#{user._id}/edit", enctype='application/x-www-form-urlencoded')
+	
+		input#input-userName(type="text", value='#{user.userName}', name="userName")
+
+		input#inputEmail(type="text", value='#{user.email}', name="email")
+
+		input#inputPassword(type="text", value='#{user.password}', name="password")
+		
+		input(type='hidden', name='_method', value='put')
+		button#btnSubmit(type="submit") update

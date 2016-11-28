@@ -7,7 +7,7 @@ var express        = require('express'),
     User           = require('../models/user');
 
 /*DECLARES REQUIREMENTS AS ROUTER UTILITIES*/
-router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 router.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
@@ -36,7 +36,7 @@ router.route('/')
        res.format({
          html: function(){
            res.render('users/index', {
-             title: 'All Users',
+						 title: 'All Users',
              'users' : users
             });
          },
@@ -57,8 +57,6 @@ router.route('/')
       else {
         res.format({
           html: function(){
-
-                    debugger
             res.redirect('/users/show');
           },
           json: function(){
@@ -103,7 +101,8 @@ router.route('/:id')
     User.findById(req.id, function (err, user){
       if (err){
         console.log(err);
-      } else {
+      }
+      else {
         res.format({
           html: function(){
             res.render('users/show', {
@@ -117,5 +116,46 @@ router.route('/:id')
       }
     });
   });
+
+router.route('/:id/edit')
+	/*GET USER#EDIT PAGE*/
+  .get(function(req, res){
+    User.findById(req.id, function(err, user){
+      if (err){
+        console.log(err);
+      }
+      else {
+        res.format({
+          html: function(){
+            res.render('users/edit', {
+              title  : "Don't ever change, ",
+              "user" : user,
+            });
+          },
+          json: function(){
+            res.json(user);
+          }
+        });
+      }
+    });
+	})
+	/*UPDATE USER*/
+	.put(function(req, res){
+		User.findByIdAndUpdate(req.id, req.body, function(err, user){
+			if (err){
+				res.send("Oops, I guess you'll have to stay the same: " + err);
+			}
+			else {
+				res.format({
+					html: function(){
+						res.redirect("/users/" + user._id);
+					},
+					json: function(){
+						res.json(user);
+					}
+				});
+			}
+		});
+	});
 
 module.exports = router;
