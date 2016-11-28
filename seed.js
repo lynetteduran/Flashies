@@ -2,50 +2,85 @@ var db = require('./models/db')
 
 var sampleUsers = [];
 sampleUsers.push({
-  userName: 'user1',
-  email: 'user1@user.com',
-  password: 'user1'
+  userName: 'Sherri',
+  email: 'sherri@user.com',
+  password: 'Sherri'
 });
 sampleUsers.push({
-  userName: 'user2',
-  email: 'user2@user.com',
-  password: 'user2'
+  userName: 'Chris',
+  email: 'chris@user.com',
+  password: 'Chris'
 });
 sampleUsers.push({
-  userName: 'user3',
-  email: 'user3@user.com',
-  password: 'user3'
+  userName: 'Teddy',
+  email: 'teddy@user.com',
+  password: 'Teddy'
 });
 sampleUsers.push({
-  userName: 'user4',
-  email: 'user4@user.com',
-  password: 'user4'
+  userName: 'Kenny',
+  email: 'kenny@user.com',
+  password: 'Kenny'
 });
 sampleUsers.push({
-  userName: 'user5',
-  email: 'user5@user.com',
-  password: 'user5'
+  userName: 'Bill',
+  email: 'bill@user.com',
+  password: 'Bill'
+});
+sampleUsers.push({
+  userName: 'Natalia',
+  email: 'natalia@user.com',
+  password: 'Natalia'
+});
+sampleUsers.push({
+  userName: 'Lily',
+  email: 'lily@user.com',
+  password: 'Lily'
+});
+sampleUsers.push({
+  userName: 'Brandon',
+  email: 'brandon@user.com',
+  password: 'Brandon'
+});
+sampleUsers.push({
+  userName: 'Toby',
+  email: 'toby@user.com',
+  password: 'Toby'
+});
+sampleUsers.push({
+  userName: 'Ryan',
+  email: 'ryan@user.com',
+  password: 'Ryan'
+});
+sampleUsers.push({
+  userName: 'Alivia',
+  email: 'alivia@user.com',
+  password: 'Alivia'
+});
+sampleUsers.push({
+  userName: 'Lynette',
+  email: 'lynette@user.com',
+  password: 'Lynette'
 });
 
 var sampleDecks = [];
 sampleDecks.push({
-  deckName: 'deck1',
+  deckName: 'math',
   subject: 'math'
 });
 sampleDecks.push({
-  deckName: 'deck2',
+  deckName: 'english',
   subject: 'english'
 });
 sampleDecks.push({
-  deckName: 'deck3',
+  deckName: 'science',
   subject: 'science'
 });
 sampleDecks.push({
-  deckName: 'deck4',
+  deckName: 'spanish',
   subject: 'spanish'
 });
 sampleDecks.push({
-  deckName: 'deck5',
+  deckName: 'chemistry',
   subject: 'chemistry'
 });
 
