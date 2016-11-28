@@ -37,7 +37,7 @@ router.route('/')
       	res.format({
         	html: function(){
           	res.render('users/index', {
-							title: 'All Users',
+							title: "Go ahead, play with everyone's decks!",
             	'users' : users
             });
         	},
@@ -59,7 +59,7 @@ router.route('/')
 				console.log('CREATED USER ID: ' + user._id);
         res.format({
           html: function(){
-            res.redirect('/users');
+            res.redirect('/users/' + user._id);
           },
           json: function(){
             res.json(user);
@@ -72,7 +72,7 @@ router.route('/')
 /*GET NEW USER PAGE*/
 router.get('/new', function(req, res){
 	console.log("GOT CREATE NEW USER PAGE");
-  res.render('users/new', { title: 'Add New User' });
+  res.render('users/new', { title: 'Sign-up!' });
 });
 
 /*USER ID VALIDATION FOR USER#SHOW,EDIT PAGE,UPDATE,AND DELETE*/
