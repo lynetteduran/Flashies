@@ -5,13 +5,13 @@ block content
 		#{title} #{user.userName}
 	h2 But if you must...
 		
-	form#formEditUser(name="editUser", method="post", action="/users/#{user._id}/edit", enctype='application/x-www-form-urlencoded')
-	
-		input#input-userName(type="text", value='#{user.userName}', name="userName")
-
-		input#inputEmail(type="text", value='#{user.email}', name="email")
-
-		input#inputPassword(type="text", value='#{user.password}', name="password")
-		
-		input(type='hidden', name='_method', value='put')
+	form#formEditUser(name="editUser", method="post", action="/users/#{user._id}/edit", enctype="application/x-www-form-urlencoded")
+		input#input-userName(type="text", value="#{user.userName}", name="userName")
+		input#inputEmail(type="text", value="#{user.email}", name="email")
+		input#inputPassword(type="text", value="#{user.password}", name="password")
+		input(type="hidden", name="_method", value="PUT")
 		button#btnSubmit(type="submit") update
+				
+	form#deleteUser(name="deleteUser", method="post", action="/users/#{user._id}/edit", enctype="application/x-www-form-urlencoded")
+		input(type="hidden",value="DELETE", name="_method")
+		button#btnSubmit(type="submit") delete
