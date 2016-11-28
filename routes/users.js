@@ -115,36 +115,12 @@ router.route('/:id')
         });
       }
     });
-  })
-	.put(function(req, res){
-    User.findById({_id: req.params.id}, function (err, user){
-      user.userName = req.body.userName;
-      user.email 		= req.body.email;
-      user.password = req.body.password;
-
-			User.save(function(err, user){
-        if (err){
-          res.send("Oops, I guess you'll have to stay the same: " + err);
-        }
-        else {
-          res.format({
-            html: function(){
-              res.redirect("/users/" + user._id, {
-									"user" : user,
-							});
-            },
-            json: function(){
-              res.json(user);
-            }
-          });
-        }
-      });
-    });
   });
 
 router.route('/:id/edit')
+	/*GET USER#EDIT PAGE*/
   .get(function(req, res){
-    User.findById({_id: req.params.id}, function(err, user){
+    User.findById(req.id, function(err, user){
       if (err){
         console.log(err);
       }
@@ -152,11 +128,8 @@ router.route('/:id/edit')
         res.format({
           html: function(){
             res.render('users/edit', {
-              title      : "Don't ever change, ",
+              title  : "Don't ever change, ",
               "user" : user,
-              // "userName" : userName,
-              // "email"    : email,
-              // "password" : password
             });
           },
           json: function(){
@@ -165,7 +138,24 @@ router.route('/:id/edit')
         });
       }
     });
+	})
+	/*UPDATE USER*/
+	.put(function(req, res){
+		User.findByIdAndUpdate(req.id, req.body, function(err, user){
+			if (err){
+				res.send("Oops, I guess you'll have to stay the same: " + err);
+			}
+			else {
+				res.format({
+					html: function(){
+						res.redirect("/users/" + user._id);
+					},
+					json: function(){
+						res.json(user);
+					}
+				});
+			}
+		});
 	});
-
 
 module.exports = router;
