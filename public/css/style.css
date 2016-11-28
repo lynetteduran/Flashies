@@ -1,0 +1,127 @@
+/** COLOR KEY **/
+/*** #028090 = METALLIC SEAWEED ***/
+/*** #F25F5C = SUNSET ORANGE ***/
+/*** #FFE066 = MUSTARD ***/
+/*** #50514F = DARK LIVER ***/
+/*** #70C1B3 = GREEN SHEEN ***/
+
+body{
+  background-color: black;
+  color: #028090;
+}
+h1 {
+  font-family: 'Shrikhand', cursive;
+}
+h2 {
+  font-family: 'Shrikhand', cursive;
+}
+.tagline{
+  color: #F25F5C;
+}
+header{
+  background-color: black;
+  font-family: 'Shrikhand', cursive;
+  height: 70px;
+  width: 100%;
+  margin: 0 0 1em 0;
+}
+#app-nav-title{
+  text-decoration: none;
+  font-size: 50px;
+  font-family: 'Shrikhand', cursive;
+  line-height: 70px;
+  color: #70C1B3;
+  float: left;
+}
+#browse-users{
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 20px;
+  color: #70C1B3;
+  padding: 20px;
+  float: right;
+}
+#create-account{
+  text-decoration: none;
+  font-size: 17px;
+  color: #70C1B3;
+  line-height: 20px;
+  padding: 20px;
+  float: right;
+}
+#login{
+  text-decoration: none;
+  font-size: 17px;
+  color: #70C1B3;
+  line-height: 20px;
+  padding: 20px;
+  float: right;
+}
+footer{
+  background-color: black;
+  color: #70C1B3;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  margin: 0 0 1em 0;
+  text-align: center;
+}
+ul{
+  list-style-type: none;
+}
+li{
+  display: inline;
+}
+#block-content{
+  margin: 60px;
+}
+/*p{
+  font-family: 'Open Sans', sans-serif;
+}*/
+input{
+  display: block;
+  padding: 5px;
+  margin: 5px;
+}
+a:link {
+  text-decoration: none;
+  color: #028090;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #028090;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #028090;
+}
+
+a:active {
+  text-decoration: underline;
+  color: #028090;
+}
+.btnSubmit{
+  background-color: #F25F5C;
+  color: #36454f;
+  border: none;
+  border-radius: 10px;
+}
+#users-index{
+  margin: auto;
+  width: 100%;
+}
+.user{
+  height: 200px;
+  width: 23%;
+  text-decoration: none;
+  text-align: center;
+  line-height: 200px;
+  border-radius: 10px;
+  font-size: 25px;
+  background-color: #F25F5C;
+  color: #50514F;
+  display: inline-block;
+  margin: 5px;
+}

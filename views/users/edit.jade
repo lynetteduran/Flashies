@@ -1,17 +1,24 @@
 extends ../layout
 
 block content
-	h1.
-		#{title} #{user.userName}
-	h2 But if you must...
+	#block-content
+		h1.
+			#{title} #{user.userName}
+		h2 But if you must...
+			
+		form#formEditUser(name="editUser", method="post", action="/users/#{user._id}/edit", enctype="application/x-www-form-urlencoded")
+			p user name:
+				input#input-userName(type="text", value="#{user.userName}", name="userName")
+			p email:
+				input#inputEmail(type="text", value="#{user.email}", name="email")
+			p password: 
+				input#inputPassword(type="text", value="#{user.password}", name="password")
+			input(type="hidden", name="_method", value="PUT")
+			button.btnSubmit.btnEditPage(type="submit") update
 		
-	form#formEditUser(name="editUser", method="post", action="/users/#{user._id}/edit", enctype="application/x-www-form-urlencoded")
-		input#input-userName(type="text", value="#{user.userName}", name="userName")
-		input#inputEmail(type="text", value="#{user.email}", name="email")
-		input#inputPassword(type="text", value="#{user.password}", name="password")
-		input(type="hidden", name="_method", value="PUT")
-		button#btnSubmit(type="submit") update
-				
-	form#deleteUser(name="deleteUser", method="post", action="/users/#{user._id}/edit", enctype="application/x-www-form-urlencoded")
-		input(type="hidden",value="DELETE", name="_method")
-		button#btnSubmit(type="submit") delete
+		form#cancelEditUser(name="cancelEditUser", method="get", action="/users/#{user._id}")
+			button.btnSubmit.btnEditPage(type="submit") cancel
+		
+		form#deleteUser(name="deleteUser", method="post", action="/users/#{user._id}/edit", enctype="application/x-www-form-urlencoded")
+			input(type="hidden",value="DELETE", name="_method")
+			button.btnSubmit.btnEditPage(type="submit") delete

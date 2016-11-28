@@ -1,11 +1,11 @@
 extends ../layout
 
 block content
-  h1.
-    #{title}
-  ul#users-index
-    - each user, i in users
-      .user.get-user
+  #block-content
+    h1.
+      #{title}
+    #users-index
+      - each user, i in users
         a(href="users/#{user._id}")
-          li
+          .user
             = user.userName
