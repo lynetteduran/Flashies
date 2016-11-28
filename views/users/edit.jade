@@ -15,7 +15,10 @@ block content
 				input#inputPassword(type="text", value="#{user.password}", name="password")
 			input(type="hidden", name="_method", value="PUT")
 			button.btnSubmit.btnEditPage(type="submit") update
-				
+		
+		form#cancelEditUser(name="cancelEditUser", method="get", action="/users/#{user._id}")
+			button.btnSubmit.btnEditPage(type="submit") cancel
+		
 		form#deleteUser(name="deleteUser", method="post", action="/users/#{user._id}/edit", enctype="application/x-www-form-urlencoded")
 			input(type="hidden",value="DELETE", name="_method")
 			button.btnSubmit.btnEditPage(type="submit") delete
