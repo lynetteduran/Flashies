@@ -1,8 +1,9 @@
 extends ../layout
 
 block content
-  h1.
-    Welcome, #{user.userName}
+  #block-content
+    h1.
+      #{user.userName}
   
-  form#getEditUser(name="editUserBtn", method="get", action="/users/#{user._id}/edit")
-    button#btnSubmit(type="submit") edit profile
+    form#getEditUser(name="editUserBtn", method="get", action="/users/#{user._id}/edit")
+      button.btnSubmit(type="submit") edit profile

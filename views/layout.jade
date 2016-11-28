@@ -3,7 +3,24 @@ html
   head
     title= title
     link(rel='stylesheet', href='/css/style.css')
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans|Shrikhand" rel="stylesheet")
+    
   body
+    header
+      navbar
+        ul
+          a(href="/")#app-nav-title
+            li myDeck
+          a(href="/users")#browse-users
+            li browse users
+          a(href="/users/new")#create-account
+            li sign-up
+          a#login
+            li login
     block content
+    footer &copy DuránMakesWeb
     script(type='text/javascript', src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
     script(src='/js/script.js')
+
+
+    

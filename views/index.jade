@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #block-content
+    h1.tagline It's the next big thing
+    
+    h2 Start playing with all the decks!
+    
+    form#formAddUser(name="addUser", method="post", action="/users")
+      p user name: 
+        input#input-userName(type="text", placeholder="ex. John Smith", name="userName")
+      p email:
+        input#inputEmail(type="text", placeholder="ex. you@thebest.com", name="email")
+      p password: 
+        input#inputPassword(type="text", name="password")
+      p
+        button.btnSubmit(type="submit") sign up
