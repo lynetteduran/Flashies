@@ -33,27 +33,14 @@ header{
   color: #70C1B3;
   float: left;
 }
-#browse-users{
-  text-decoration: none;
-  font-size: 17px;
-  line-height: 20px;
-  color: #70C1B3;
-  padding: 20px;
-  float: right;
-}
-#create-account{
-  text-decoration: none;
-  font-size: 17px;
-  color: #70C1B3;
-  line-height: 20px;
-  padding: 20px;
-  float: right;
-}
+#browse-decks,
+#browse-users,
+#create-account,
 #login{
   text-decoration: none;
   font-size: 17px;
-  color: #70C1B3;
   line-height: 20px;
+  color: #70C1B3;
   padding: 20px;
   float: right;
 }
@@ -108,11 +95,13 @@ a:active {
   border: none;
   border-radius: 10px;
 }
-#users-index{
+#users-index
+#deck-index{
   margin: auto;
   width: 100%;
 }
-.user{
+.user,
+.deck{
   height: 200px;
   width: 23%;
   text-decoration: none;

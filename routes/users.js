@@ -37,7 +37,7 @@ router.route('/')
       	res.format({
         	html: function(){
           	res.render('users/index', {
-							title: "Go ahead, play with everyone's decks!",
+							title: "All myDeck Players",
             	'users' : users
             });
         	},
@@ -107,10 +107,12 @@ router.route('/:id')
       }
       else {
 				console.log('GOT USER ID: ' + user._id);
+        console.log(user)
         res.format({
           html: function(){
             res.render('users/show', {
-              "user" : user
+              "user" : user,
+              "decks" : user.decks
             });
           },
           json: function(){

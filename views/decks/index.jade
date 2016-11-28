@@ -1,11 +1,14 @@
 extends ../layout
 
 block content
-  h1 All decks
-    //- #{title}
-  //- ul#decks-index
-  //-   - each deck, i in decks
-  //-     .deck.get-deck
-  //-       a(href="decks/#{deck._id}")
-  //-         li
-  //-           = deck.deckName
+  #block-content
+    h1.
+      #{title}
+    #decks-index
+      - each deck in decks
+        a(href="decks/#{deck.id}")
+          .deck
+            = deck.deckName
+            
+
+  
