@@ -13,11 +13,15 @@ var port           = process.env.PORT || 3000;
 /**DATABASE AND ALL ROUTES REQUIREMENTS/SET-UP**/
 var db     = require('./models/db');
 var user   = require('./models/user');
+var deck   = require('./models/deck');
+
 var routes = require('./routes/index');
 var users  = require('./routes/users');
+var decks  = require('./routes/decks');
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/decks', decks);
 
 /**APPLICATION SET-UP**/
 app.set('views', path.join( __dirname, 'views'));
