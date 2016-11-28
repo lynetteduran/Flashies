@@ -30,21 +30,22 @@ router.route('/')
   .get(function(req, res, next){
     User.find({}, function (err, users){
       if (err){
-        return console.error(err);
+      	return console.error(err);
       }
       else {
-       res.format({
-         html: function(){
-           res.render('users/index', {
-						 title: 'All Users',
-             'users' : users
+				console.log('GOT ALL USERS');
+      	res.format({
+        	html: function(){
+          	res.render('users/index', {
+							title: 'All Users',
+            	'users' : users
             });
-         },
-         json: function(){
-          res.json(users);
-          console.log(users);
-         }
-       });
+        	},
+         	json: function(){
+          	res.json(users);
+          	console.log(users);
+         	}
+       	});
       }
     });
   })
@@ -55,9 +56,10 @@ router.route('/')
         res.send(err);
       }
       else {
+				console.log('CREATED USER ID: ' + user._id);
         res.format({
           html: function(){
-            res.redirect('/users/show');
+            res.redirect('/users');
           },
           json: function(){
             res.json(user);
@@ -69,10 +71,11 @@ router.route('/')
 
 /*GET NEW USER PAGE*/
 router.get('/new', function(req, res){
+	console.log("GOT CREATE NEW USER PAGE");
   res.render('users/new', { title: 'Add New User' });
 });
 
-/*GET USER ID VALIDATION*/
+/*USER ID VALIDATION FOR USER#SHOW,EDIT PAGE,UPDATE,AND DELETE*/
 router.param('id', function(req, res, next, id) {
   User.findById(id, function (err, user) {
     if (err) {
@@ -100,9 +103,10 @@ router.route('/:id')
   .get(function(req, res){
     User.findById(req.id, function (err, user){
       if (err){
-        console.log(err);
+        console.log("DOH!" + err);
       }
       else {
+				console.log('GOT USER ID: ' + user._id);
         res.format({
           html: function(){
             res.render('users/show', {
@@ -125,6 +129,7 @@ router.route('/:id/edit')
         console.log(err);
       }
       else {
+				console.log('GOT EDIT PAGE w/ USER ID: ' + user._id);
         res.format({
           html: function(){
             res.render('users/edit', {
@@ -146,12 +151,35 @@ router.route('/:id/edit')
 				res.send("Oops, I guess you'll have to stay the same: " + err);
 			}
 			else {
+				console.log('UPDATED USER ID: ' + user._id);
 				res.format({
 					html: function(){
 						res.redirect("/users/" + user._id);
 					},
 					json: function(){
 						res.json(user);
+					}
+				});
+			}
+		});
+	})
+	/*DELETE USER*/
+	.delete(function (req, res){
+		User.findByIdAndRemove(req.id, function (err, user){
+			if (err){
+				return console.error(err);
+			}
+			else {
+				console.log('DELETED USER ID: ' + user._id);
+				res.format({
+					html: function(){
+						res.redirect("/users");
+					},
+					json: function(){
+						res.json({
+							message : 'deleted',
+							item : user
+						});
 					}
 				});
 			}
