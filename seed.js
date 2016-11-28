@@ -83,27 +83,39 @@ sampleDecks.push({
   deckName: 'chemistry',
   subject: 'chemistry'
 });
+sampleDecks.push({
+  deckName: 'french',
+  subject: 'french'
+});
+sampleDecks.push({
+  deckName: 'web dev',
+  subject: 'web dev'
+});
+sampleDecks.push({
+  deckName: 'art history',
+  subject: 'art history'
+});
 
 var sampleCards = [];
 sampleCards.push({
-  question: 'question1',
-  answer: 'answer1'
+  question: '2 + 2',
+  answer: '4'
 });
 sampleCards.push({
-  question: 'question2',
-  answer: 'answer2'
+  question: 'How to declare variable foo?',
+  answer: 'var foo'
 });
 sampleCards.push({
-  question: 'question3',
-  answer: 'answer3'
+  question: 'Current U.S. president?',
+  answer: 'Barack Obama'
 });
 sampleCards.push({
-  question: 'question4',
-  answer: 'answer4'
+  question: 'Symbol that defines array?',
+  answer: '[]'
 });
 sampleCards.push({
-  question: 'question5',
-  answer: 'answer5'
+  question: 'Symbol that defines object?',
+  answer: '{}'
 });
 
 sampleUsers.forEach(function(user){
