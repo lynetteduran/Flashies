@@ -19,8 +19,7 @@
 ##Database <br>
 - MongoDB 3.2.9 <br>
 
-## Data Models
-<img src='https://lh3.google.com/u/0/d/0B-akLkaoR5tFWVJ0RUZoSVAybW8=w928-h760-iv1' height='500'>
+<img src="http://i.imgur.com/sk3GB8Q.png" title="source: imgur.com" height='500'/>
 
 ## Future Features:
 * Complete full CRUD on all data models <br>
