@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+	#block-content
+		h1.
+			#{title}
+		form#formCreateDeck(name="createDeck", method="post", action="/users/#{user._id}/decks/new")
+			p Deck Name: 
+				input#input-deckName(type="text", placeholder="ex. fractions", name="deckName")
+			p Deck Subject:
+				input#input-subject(type="text", placeholder="ex. math", name="subject")
+			p
+				button.btnSubmit(type="submit") submit
