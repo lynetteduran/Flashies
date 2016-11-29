@@ -3,7 +3,7 @@ An app where you can create, store, and share custom flash cards. Flashy allows 
 
 <img src="http://i.imgur.com/in9r86P.png" title="source: imgur.com" height='500'/>
 
-<img src="http://i.imgur.com/eqHvAEt.png" title="source: imgur.com" height='550'/>
+<img src="http://i.imgur.com/HJGQIcp.png" title="source: imgur.com" height='500'/>
 
 ##Technologies
 - Html 5 <br>
