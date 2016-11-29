@@ -1,4 +1,6 @@
 # Flashy
+An app where you can create, store, and share custom flash cards. Flashy allows you to interact with your cards through different game modes such as Quiz mode and a Memory Game. Browse other users' decks to enhance your study efforts. Just create a study deck, Flashy does the rest!
+
 
 ##Technologies
 - Html 5 <br>
