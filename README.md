@@ -1,4 +1,4 @@
-# myDeck
+# Flashy
 
 ##Technologies
 - Node.js 6.5.0
