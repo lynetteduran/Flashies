@@ -6,7 +6,7 @@ block content
       #{title}
     #decks-index
       - each deck in decks
-        a(href="decks/#{deck.id}")
+        a(href="decks/#{deck._id}")
           .deck
             = deck.deckName
             
