@@ -4,20 +4,16 @@ block content
   #block-content
     h1.
       #{user.userName}
-  
+    h2 player since #{userSince}
+      
     form#getEditUser(name="getEditUserBtn", method="get", action="/users/#{user._id}/edit")
       button.btnSubmit(type="submit") edit profile
-    form#getUserDecks(name="getUserDecks", method="get", action="/users/#{user._id}/decks")
-      button.btnSubmit(type="submit") my decks 
-      
+    
+    form#getNewDeck(name="getNewDeckBtn", method="get", action="/users/#{user._id}/decks/new")
+      button.btnSubmit(type="submit") create a deck
+    
       #decks-index
         - each deck in decks
           a(href="decks/#{deck.id}")
             .deck
-              = deck.deckName
-
-          //- a(href="decks/#{deck._id}")
-          //-   .deck
-          //-     = decks
-      
-       
+              = deck.deckName     
