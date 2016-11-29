@@ -1,6 +1,9 @@
 # Flashy
 An app where you can create, store, and share custom flash cards. Flashy allows you to interact with your cards through different game modes such as Quiz mode and a Memory Game. Browse other users' decks to enhance your study efforts. Just create a study deck, Flashy does the rest!
 
+<img src="http://i.imgur.com/in9r86P.png" title="source: imgur.com" height='500'/>
+
+<img src="http://i.imgur.com/eqHvAEt.png" title="source: imgur.com" height='500'/>
 
 ##Technologies
 - Html 5 <br>
@@ -21,6 +24,7 @@ An app where you can create, store, and share custom flash cards. Flashy allows 
 ##Database <br>
 - MongoDB 3.2.9 <br>
 
+##Data Models ERD
 <img src="http://i.imgur.com/sk3GB8Q.png" title="source: imgur.com" height='500'/>
 
 ## Future Features:
