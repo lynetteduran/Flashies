@@ -21,7 +21,7 @@ router.use(methodOverride(function(req, res){
 /*RETURNS MESSAGE ON CONSOLE WHEN SERVER RECEIVES USER CRUD REQUEST,
   PROCEEDS TO RESPECTIVE REQUEST*/
 router.use(function(req, res, next) {
-  console.log('Something is happening...');
+  console.log('Something is happening on user route...');
   next();
 });
 
@@ -108,9 +108,9 @@ router.route('/:id')
       }
       else {
 				console.log('GOT USER ID: ' + user._id);
-        console.log(user)
+        console.log(user);
         var userSince = user.userSince.toISOString();
-        userSince = userSince.substring(0, userSince.indexOf('T'))
+        userSince = userSince.substring(0, userSince.indexOf('T'));
         res.format({
           html: function(){
             res.render('users/show', {
@@ -246,5 +246,7 @@ router.route('/:id/decks/new')
       }
     });
   });
+
+
 
 module.exports = router;

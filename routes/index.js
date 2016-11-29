@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.use(function(req, res, next) {
-  console.log('Something is happening...');
+  console.log('Something is happening on index...');
   next();
 });
 
