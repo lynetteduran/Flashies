@@ -12,11 +12,9 @@ An app where you can create, store, and share custom flash cards. Flashy allows 
 - Express.js 4.14.0 <br>
 - Mongoose 4.7.0 <br>
 - Jade 1.11.0 <br>
-- JQuery 3.1.1 <br>
 
 ##Node dependencies
 - body-parser 1.15.2 <br>
-- cookie-parser 1.4.3 <br>
 - method-override 2.3.7 <br>
 - serve-favicon 2.3.2 <br>
 - serve-static 1.11.1 <br>
@@ -33,5 +31,6 @@ An app where you can create, store, and share custom flash cards. Flashy allows 
 * Create a Leaderboard with Score model <br>
 * Create interactivity with decks and their cards (Quiz Mode, Memory Game, etc.) <br>
 * Connect to exteral API to source data for user card creation <br>
-* Add a CSS framework <br>
+* Add a CSS framework (hopefully Materialize<br>
+* Add AJAX requests and API enpoints
 * Possibly add a frontend framework (maybe React)<br>
