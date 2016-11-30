@@ -34,3 +34,4 @@ An app where you can create, store, and share custom flash cards. Flashy allows 
 * Add a CSS framework (hopefully Materialize<br>
 * Add AJAX requests and API enpoints
 * Possibly add a frontend framework (maybe React)<br>
+* Work with a UX designer
